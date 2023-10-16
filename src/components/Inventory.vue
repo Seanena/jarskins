@@ -1,72 +1,111 @@
 <template>
-  <div id="app">
-      <div class="table">
-          <div class="bottom-bar">
-              <a href="#" class="order-history">ประวัติการสั่งซื้อ</a>
-              <div class="separator"></div>
-              <a href="/src/headder/sell_order.html" class="sales-history">บันทึกการขาย</a>
-              <div class="search-box">
-                  <input class="search-input" type="text" placeholder="กรอกชื่อไอเทม" />
-                  <button class="serch-button">ค้นหา</button>
-              </div>
-          </div>
+        <!-- เนื้อหาหน้าแอปของคุณ -->
+        <div class="table">
+            <div class="bottom-bar">
+                <a href="/src/headder/inventory.html" class="order-history">สต๊อคสินค้า</a>
+                <div class="separator"></div> 
+                    <a href="/src/headder/sell_now.html" class="sales-history">สินค้าที่กำลังขายอยู่</a>
+                <div class="separator"></div> 
+                    <a href="/src/headder/delivery_order.html" class="sales-history">รอส่งสินค้า</a>
+            </div>
+        
+        <div class="custom-div">
+            <div class="lin">
+                <div class="type">ชนิด</div>
+                <div class="line"></div>
+                <div class="search-box">
+                    <input class="search-input" type="text" placeholder="กรอกชื่อไอเทม"/>
+                    <button class="serch-button" >ค้นหา</button>
+                </div>
+            </div>
+            <div class="text">
+                <div class="tex">
+                    <p style="color: rgb(255, 255, 255);">จำนวน : </p>
+                    <p class="red">0</p>
+                    <p style="color: rgb(255, 255, 255);">ประเมินราคาได้ : </p>
+                    <p class="red">100000</p>
+                </div>
+                <div class="check">
+                    <input type="checkbox">
+                    <p style="color: rgb(255, 255, 255);">เลือกทั้งหมด (1/1) </p>
+                </div>
+            </div>
+            <div class="itembox">
 
-          <div class="custom-div">
-              <div class="column">
-                  <div class="info-item">
-                      <p class="info-label">ข้อมูลสินค้า</p>
-                  </div>
-                  <div class="info-item">
-                      <p class="info-label">ข้อมูลสกิล</p>
-                  </div>
-                  <div class="info-item">
-                      <p class="info-label">ราคาซื้อ</p>
-                  </div>
-                  <div class="info-item">
-                      <p class="info-label">วิธีการชำระเงิน</p>
-                  </div>
-                  <div class="info-item">
-                      <p class="info-label">ราคาซื้อ</p>
-                  </div>
-              </div>
-              <div class="row">
-                  <img src="../assets/pic/playerLeft.png" alt="" />
-                  <p>M4A4 | Eye of Horus (มีรอยถลอกเล็กน้อย) </p>
-                  <p class="red">฿ 47122.28</p>
-                  <h3>Promptpay</h3>
-                  <button>รอต่อรอบเทรด offer</button>
-              </div>
+                <div class="item">
+                    <div class="itemimg">
+                        <img src="../assets/pic/playerLeft.png" alt="">
+                    </div>
+                    <div class="line"></div>
+                    <h1>฿81.42</h1>
+                    <p class="red">MAC-10</p>
+                    <br>
+                    <h3>Sakkaku</h3>
+                    <div class="linee"></div>
+                </div>
+                <div class="item">
+                    <div class="itemimg">
+                        <img src="../assets/pic/playerLeft.png" alt="">
+                    </div>
+                    <div class="line"></div>
+                    <h1>฿81.42</h1>
+                    <p class="red">MAC-10</p>
+                    <br>
+                    <h3>Sakkaku</h3>
+                    <div class="linee"></div>
+                </div>
+                <div class="item">
+                    <div class="itemimg">
+                        <img src="../assets/pic/playerLeft.png" alt="">
+                    </div>
+                    <div class="line"></div>
+                    <h1>฿81.42</h1>
+                    <p class="red">MAC-10</p>
+                    <br>
+                    <h3>Sakkaku</h3>
+                    <div class="linee"></div>
+                </div>
+            </div>
+        </div>
+            
+            
+
+    </div>
+        
+        
+        
+             
+    <footer class="site-footer">
+        <div class="f1">
+          <h3>JARJOSUDLOR</h3>
+          <p>Powered by Steam. Not affiliated with Valve Corp.</p>
+          <p>
+            &copy; 2023 JARJOSUDLOR | 
+            <a>นโยบายความเป็นส่วนตัว</a> | 
+            <a>ข้อกำหนดการให้บริการ</a> | 
+            <a>นโยบายคุกกี้</a>
+          </p>
+        </div>
+        <div class="f2">
+          <div class="f21">
+  
+            <h3>Introduction</h3>
+            <p>Privacy Statement</p>
+            <p>Terms of Service</p>
+            <p>Cookie policy</p>
           </div>
-      </div>
-      <footer class="site-footer">
-          <div class="f1">
-              <h3>JARJOSUDLOR</h3>
-              <p>Powered by Steam. Not affiliated with Valve Corp.</p>
-              <p>
-                  &copy; 2023 JARJOSUDLOR |
-                  <a>นโยบายความเป็นส่วนตัว</a> |
-                  <a>ข้อกำหนดการให้บริการ</a> |
-                  <a>นโยบายคุกกี้</a>
-              </p>
+          <div class="f22">
+            <h3>Payment methods</h3>
+            <p>prompt pay</p>
+            <p>true money</p>
           </div>
-          <div class="f2">
-              <div class="f21">
-                  <h3>Introduction</h3>
-                  <p>Privacy Statement</p>
-                  <p>Terms of Service</p>
-                  <p>Cookie policy</p>
-              </div>
-              <div class="f22">
-                  <h3>Payment methods</h3>
-                  <p>prompt pay</p>
-                  <p>true money</p>
-              </div>
-          </div>
-      </footer>
-  </div>
+        </div>
+    </footer>
+
 </template>
 
 <style>
+/* Import font from Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300&display=swap');
 
 /* Reset default styles */
@@ -86,7 +125,6 @@ body {
 button:hover {
   cursor: pointer;
 }
-
 
 /* theme */
 p,h2{
@@ -142,7 +180,7 @@ a {
   align-items: center;
 }
 .wallet{
-  background-color: #000000;
+  background-color: #010101;
   width: 20%;
   
 }
@@ -259,27 +297,24 @@ footer{
   align-items: center;
   border-radius: 50px;
   padding: 5px;
-  margin-left: auto; /* เลื่อนไปทางขวาสุด */
-
 }
 
 .search-input {
-  margin-left: 3rem;
-  padding: 5px 19px;
+  padding: 4px 19px;
   border: none;
   border-radius: 50px;
-  width: 490px;
+  width: 400px;
   box-sizing: border-box;
   border: #333 2px solid;
 }
 
 /* สไตล์สำหรับไอคอนรูปตระกูลสินค้า */
 .serch-button{
-  margin-left: -4.7rem;
+  margin-left: -4.6rem;
   margin-bottom: 2px;
-  margin-top: 1.5px;
-  width: 75px;
-  height: 32px;
+  margin-top: 1.6px;
+  width: 74px;
+  height: 30px;
   border-radius: 20px;
   font-size: 14px;
   background-color: darkred;
@@ -289,21 +324,6 @@ footer{
   background-color: red;
   color: #fff;
 }
-
-
-/* รูปแบบสำหรับแท็กหลักที่ครอบคลุมกล่อง input */
-.input-container {
-  display: flex;
-  align-items: center;
-  border: 1px solid #333; /* กรอบล้อมกล่อง input */
-  border-radius: 5px; /* ปรับรูปร่างกรอบ */
-  padding: 3px; /* ระยะห่างของข้อมูลภายในกรอบ */
-  width: fit-content; /* ปรับขนาดกล่องให้พอดีกับเนื้อหา */
-}
-
-
-
-
 
 /* styles.css */
 
@@ -315,7 +335,6 @@ a {
 
 .table{
   display: flexbox;
-  justify-content: center;
   margin-left: 2%;
 }
 /* รูปแบบสำหรับช่องด้านล่างของ header */
@@ -325,7 +344,6 @@ a {
   background: #272C33;
   display: flex; /* เปิดใช้ Flexbox */
   align-items: center; /* จัดตำแหน่งตรงกลางแนวตั้ง */
-  justify-content: center;
   margin-top: 10px; /* ขยับลงมาด้านล่างอีก 10px */
   padding: 10px;
 }
@@ -350,7 +368,7 @@ a {
 }
 
 .sales-history {
-  color: #fffdfd; /* เปลี่ยนสีข้อความเป็นสีดำ */
+  color: #f6f6f6; /* เปลี่ยนสีข้อความเป็นสีดำ */
   font-size: 14px;
   margin-left: 10px; /* ขยับข้อความไปทางขวา 10px (หรือค่าที่คุณต้องการ) */
 }
@@ -359,23 +377,11 @@ a {
   padding: 20px;
   width: 98%;
   height: 1000px;
-  flex-shrink: 0;
   border-radius: 10px;
   background: #272C33;
   margin-top: 10px; /* ขยับลงมาด้านล่างอีก 10px */
 }
-.custom-div p{
-  font-size: 18px;
-}
-.column{
-  margin: 0 auto;
-  width: 92%;
-  flex-direction: row; /* จัดเรียงแนวนอน */
-  justify-content: space-between; /* ให้แต่ละรายการกระจายอย่างเท่าๆ กัน */
-  align-items: center;
-  display: flex;
 
-}
 .info-container {
   display: flex;
   flex-direction: column; /* เปลี่ยนเป็นแนวตั้ง */
@@ -388,55 +394,112 @@ a {
   margin-top: 10px; /* ขยับลงมาด้านล่างอีก 10px */
   padding: 20px; /* เพิ่มการเว้นระยะห่างของข้อความ */
 }
-
-.info-item {
-  margin-right: 20px; /* ระยะห่างระหว่างข้อมูล */
-  font-family: 'IM FELL Great Primer';
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  color: #000000;
-  align-self: flex-start; /* ขยับข้อความขึ้นไปด้านบนของ .info-container */
+.hii{
+    margin-top: -58rem;
 }
 
-.ropdown-content{
-  margin-left: 100px;
-}
-
-.info-label {
-  color: rgb(253, 253, 253); /* เปลี่ยนสีข้อความเป็นสีดำ */
-}
-
-.row{
-  margin: 0 auto;
-  margin-top: 30px;
-  background-color: #B4B3B3;
-  width: 97%;
-  height: 100px;
+.lin{
   display: flex;
+  width: 100%;
   align-items: center;
-  justify-content: space-around;
-  padding: 0 -20px;
+  margin: 0 auto;
+  cursor: context-menu;
 }
-.row img{
-  width: 150px;
-  height: 70px;
-  border: #1D2126 1px solid;
+.type{
+  width: 9rem;
+  height: 1.9rem;
+  border: white 1px solid;
+  border-radius: 30px;
+  color: #000;
+  background-color: silver;
+  font-weight: bold;
+  text-align: center;
+  align-items: center;
+  font-size: 14px;
 }
-.row button{
-  width: 160px;
-  height: 70px;
-  font-size: 16px;
-  background-color: #C93131;
-  border: none;
-  color: white;
-  border-radius: 3px;
+.line {
+    width: 100%;
+    height: 1px;
+    background-color: #000; /* สีของเส้น */
 }
-.row button:hover{
-  background-color: darkred;
+.text{
+  display: flex;
+  margin-left: .4rem;
+  justify-content: space-between;
+  width: 80%;
+  margin-top: 20px;
+
+}
+.tex{
+  display: flex;
+  justify-content: space-between;
+  width: 25%;
+}
+.check{
+  display: flex;
+}
+.check input{
+  margin-right: 20px;
+  width: 25px;
+  height: 25px;
 }
 .red{
   color: red;
 }
+
+
+.itembox{
+  width: 100%;
+  padding: 3rem 7rem;
+  display: flex;
+  flex-wrap: wrap
+}
+.item{
+  margin: .7rem;
+  width: 250px;
+  height: 330px;
+  background-color: silver;
+  justify-content: center;
+  padding: 20px;
+}
+.item .line{
+  box-shadow: 0 3px 5px 2px gray ;
+}
+.itemimg{
+  text-align: center;
+}
+.item img{
+  width: 90px;
+  height: 120px;
+}
+.item h1{
+  margin-top: 13px;
+  font-weight: bold;
+  font-size: 30px;
+}
+.item h1,h3{
+  color: #ffffff;
+}
+.item p{
+  font-size: 14px;
+}
+.linee{
+  margin-top: 5px;
+  width: 100%;
+  height: 1px;
+  background-color: red; /* สีของเส้น */
+  box-shadow: 0 .1px .1px .1px rgb(255, 119, 119) ;
+  background: linear-gradient(to right, #ff0000, transparent);
+}
+
+
+
+
+
+.item:hover{
+  background-color: #D9D9D9;
+  border: white 1px solid;
+  cursor: pointer;
+}
 </style>
+

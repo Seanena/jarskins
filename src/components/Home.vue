@@ -1,24 +1,3 @@
-<script setup>
-import Flickity from 'flickity'
-
-const flickity = new Flickity('.carousel', {
-  wrapAround: true,
-  autoPlay: true,
-  imagesLoaded: true
-});
-
-flickity.on('change', function(index) {
-  // ซ่อนรูปภาพทั้งหมด
-  const images = document.querySelectorAll('.carousel-img');
-  images.forEach(image => {
-    image.style.display = 'none';
-  });
-
-  // แสดงรูปภาพที่เกี่ยวข้องกับหน้าลูกศรปัจจุบัน
-  images[index].style.display = 'block';
-});
-</script>
-
 <template>
   <div class="carousel" data-flickity='{ "wrapAround": true, "autoPlay": true, "imagesLoaded": true }'>
   <div class="carousel-cell">
@@ -30,15 +9,14 @@ flickity.on('change', function(index) {
   <div class="carousel-cell">
     <img class="w3-image carousel-img" src="/src/assets/pic/carousel3.webp">
   </div>
-</div>
-
-
+ </div>
+ 
   <div class="nav">
     <figure> 
       <a href="">
-        <img src="src\assets\pic\arrowup.png" alt="" width="25px" height="25px">
+        <img src="/src/assets/pic/arrowup.png" alt="" width="25px" height="25px">
       </a>
-      <img src="src\assets\pic\clipart1589423.png" alt="" width="25px" height="25px">
+      <img src="/src/assets/pic/clipart1589423.png" alt="" width="25px" height="25px">
     </figure>
   </div>
 
@@ -138,7 +116,7 @@ flickity.on('change', function(index) {
             <b>รับมากขึ้นในราคาที่ถูกลง</b>
           <p>เพลิดเพลินกับราคาที่ต่ำกว่า steam Marketplace ถึง 100%</p>
         </div>
-        <img src="src\assets\pic\trolley-cart.png" alt="">
+        <img src="/src/assets/pic/trolley-cart.png" alt="">
       </div>
       <a href="src/item/item_knife.html">
           <button>ไปตลาด</button>
@@ -151,7 +129,7 @@ flickity.on('change', function(index) {
             <b>2% commission</b>
             <p>Enjoy the Lowest Commission in the Market</p>
           </div>
-          <img src="src\assets\pic\shop.png" alt="">
+          <img src="/src/assets/pic/shop.png" alt="">
         </div>
         <a href="src/item/item_knife.html">
           <button>รายการ</button>
@@ -159,4 +137,51 @@ flickity.on('change', function(index) {
       </div>
     </div>
   </div>
+  <footer class="site-footer">
+            <div class="f1">
+              <h3>JARJOSUDLOR</h3>
+              <p>Powered by Steam. Not affiliated with Valve Corp.</p>
+              <p>
+                &copy; 2023 JARJOSUDLOR | 
+                <a>นโยบายความเป็นส่วนตัว</a> | 
+                <a>ข้อกำหนดการให้บริการ</a> | 
+                <a>นโยบายคุกกี้</a>
+              </p>
+            </div>
+            <div class="f2">
+              <div class="f21">
+      
+                <h3>Introduction</h3>
+                <p>Privacy Statement</p>
+                <p>Terms of Service</p>
+                <p>Cookie policy</p>
+              </div>
+              <div class="f22">
+                <h3>Payment methods</h3>
+                <p>prompt pay</p>
+                <p>true money</p>
+              </div>
+            </div>
+        </footer>
 </template>
+
+<script>
+import Flickity from 'flickity';
+
+const flickity = new Flickity('.carousel', {
+  wrapAround: true,
+  autoPlay: true,
+  imagesLoaded: true
+});
+
+flickity.on('change', (index) => {
+  // ซ่อนรูปภาพทั้งหมด
+  const images = document.querySelectorAll('.carousel-img');
+  images.forEach((image) => {
+    image.style.display = 'none';
+  });
+
+  // แสดงรูปภาพที่เกี่ยวข้องกับหน้าลูกศรปัจจุบัน
+  images[index].style.display = 'block';
+});
+</script>

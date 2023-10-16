@@ -1,10 +1,10 @@
 <script setup>
-import About from '../components/About.vue'
+import Market from '../components/Market.vue'
 </script>
 
 <template>
   <main>
-    <About />
+    <Market />
   </main>
 </template>
 
