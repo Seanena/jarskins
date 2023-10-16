@@ -1,0 +1,361 @@
+/* main.css */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'IBM Plex Sans Thai', sans-serif;
+}
+/* nav */
+.nav{
+  background-color: lightgray;
+  margin-right: 2rem;
+  height: 100px;
+  width: 40px;
+  border-radius: 40px;
+  position: fixed;
+  bottom: 20px;
+  right: 0;
+}
+
+.nav figure{
+  margin-top: 15px;
+  margin-left: 7px;
+}
+.nav img:hover{
+  cursor: pointer;
+}
+
+button:hover{
+  cursor: pointer;
+}
+
+
+
+/* theme */
+p,h2{
+  color: white;
+}
+body{
+  background-color: #1D2126;
+}
+
+
+/* สไตล์สำหรับเฮดเดอร์ที่กำหนดเอง */
+.custom-header {
+  width: 100%;
+  height: 70px;
+  background: #272C33;
+  border-bottom: #333 1px solid;
+  display: flex;
+  padding: 0 40px; /* ปรับการเว้นระยะตามต้องการ */
+  box-sizing: border-box;
+}
+
+.header-content {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ขนาดของรูปภาพสำหรับ icon2 และ icon3 */
+.product-icon img {
+  width: 40px;
+  height: 35px;
+}
+.header-content p{
+  font-size: 10px;
+}
+
+/* รูปแบบสำหรับแท็กหลักที่ครอบคลุมกล่อง input */
+.input-container {
+  display: flex;
+  align-items: center;
+  border: 1px solid #333; /* กรอบล้อมกล่อง input */
+  border-radius: 5px; /* ปรับรูปร่างกรอบ */
+  padding: 3px; /* ระยะห่างของข้อมูลภายในกรอบ */
+  width: fit-content; /* ปรับขนาดกล่องให้พอดีกับเนื้อหา */
+}
+a {
+  text-decoration: none;
+}
+
+.into{
+  display: flex;
+  align-items: center;
+}
+.wallet{
+  background-color: #000000;
+  width: 20%;
+  
+}
+.wallet-input {
+  font-size: 14px; /* ปรับขนาดตามความต้องการ */
+  border: none;
+  width: 100%;
+  padding: 0;
+  background-color: transparent; /* ลบพื้นหลัง */
+}
+.product-icon {
+  width: 25rem;
+  margin-right: -7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-icon a{
+  color: lightgray;
+  font-size: 16px;
+  margin-right: 20px;
+}
+.product-icon a:hover{
+  color: #fff;
+}
+
+footer{
+  bottom: 0;
+  left: 0;
+  padding: 0 40px;
+}
+.site-footer {
+
+  height: 200px;
+  background-color: #333; /* สีพื้นหลังของ footer */
+  color: #fff; /* สีข้อความใน footer */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+}
+
+.f2{
+  display: flex;
+  justify-content: space-between;
+  width: 20rem;
+}
+.f1 p{
+  color: white;
+}
+.f2 p{
+  color: white;
+}
+
+/* สไตล์สำหรับโลโก้ */
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+}
+.logo a{
+  color: #fff;
+  text-decoration: none;
+}
+
+/* แถบค้นหา & tags */
+.subhead{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: -20px;
+}
+/* สไตล์สำหรับช่องค้นหาแบบวงลี */
+.search-box {
+  display: flex;
+  align-items: center;
+  border-radius: 50px;
+  padding: 5px;
+}
+
+.search-input {
+  margin-left: 3rem;
+  padding: 5px 19px;
+  border: none;
+  border-radius: 50px;
+  width: 490px;
+  box-sizing: border-box;
+  border: #333 2px solid;
+}
+
+/* สไตล์สำหรับไอคอนรูปตระกูลสินค้า */
+.serch-button{
+  margin-left: -4.9rem;
+  margin-bottom: 2px;
+  margin-top: 1px;
+  width: 75px;
+  height: 27px;
+  border-radius: 20px;
+  font-size: 14px;
+  background-color: rgb(250, 81, 51);
+  color: #fff;
+}
+.serch-button:hover{
+  background-color: rgb(179, 5, 5);
+  color: #fff;
+}
+
+
+
+.contai1 p{
+  color: white;
+}
+.contai1 .tags button{
+  color: black;
+  background: #f5f5f5;
+}
+.contai1 .tags button:hover{
+  background-color: silver;
+}
+.tags {
+  float: left;
+  display: block;
+  text-align: center;
+  padding: 14px 10px;
+}
+.tags button{
+  color: #333;
+  background: silver;
+  font-weight: bold;
+  padding: 3px 25px;
+  border-radius: 90px;
+  border: #333 1px solid;
+}
+.tags button:hover{
+  color: #333;
+  background-color: #fff;
+}
+
+
+
+
+
+.contai1{
+  margin-top: -20rem;
+  height: 800px;
+  margin-left: 2rem;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  
+}
+.contai1 p{
+  margin-top: 3px;
+}
+
+.contai2{
+  margin: 0 auto;
+  width: 90%;
+  margin-top: -300px;
+  display: grid;
+  gap: 10px; /* ระยะห่างระหว่างรูปภาพแนวตั้ง */
+  justify-content: center; /* จัดให้รูปภาพอยู่กึ่งกลางแนวนอน */
+}
+.contai2 img{
+  width: 250px;
+  height: 140px;
+  margin: .2rem;
+  background-color: whitesmoke;
+  border-radius: 10px;
+}
+
+.contai3{
+  margin-top: 90px;
+  height: 400px;
+  text-align: center;
+}
+.bigfig{
+  margin-top: 40px;
+}
+.contai3 figure{
+  display: flex;
+  justify-content: center; /* จัดให้รูปภาพอยู่กึ่งกลางแนวนอน */
+}
+.ball {
+  width: 90px;
+  height: 90px;
+  background-color: lightgray;
+  margin: .5rem;
+  border-radius: 190px;
+  border: white 3px solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ball img {
+  width: 100%; /* ปรับขนาดความกว้างของรูปให้เท่ากับ .ball */
+  height: 100%; /* ปรับขนาดความสูงของรูปให้เท่ากับ .ball */
+  margin-top: 9px;
+}
+
+
+.ball:hover{
+  cursor: pointer;
+}
+
+
+@media screen and (max-width:480px) {
+  .header-content{
+    grid-template-columns: repeat(2,1fr);
+  }
+}
+
+
+
+.contai4{
+  height: 400px;
+  text-align: center;
+}
+.bigmarket{
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.market{
+  width: 380px;
+  height: 180px;
+  background-color: lightgray;
+  border-radius: 17px;
+  text-align: left;
+  padding: 20px;
+  margin: 1rem;
+}
+.mtex{
+  width: 230px;
+  color: black;
+}
+.mtex h3{
+  font-size: 25px;
+  font-weight: bold;
+}
+.mtex h3,b,p{
+  color: #333;
+}
+
+.marketflex{
+  display: flex;
+}
+.market button{
+  margin-top: 20px;
+  width: 150px;
+  height: 35px;
+  border-radius: 3px;
+  border: none;
+  background-color: lightcoral;
+  font-weight: bold;
+  color: black;
+}
+.market button:hover{
+  background-color: brown;
+  color: #fff;
+}
+.market img{
+  margin-top: 10px;
+  margin-left: 20px;
+  width: 150px;
+  height: 120px;
+}
+.carousel-img {
+  display: block;
+  transform: translateY(60px); /* ปรับตามความต้องการ */
+}
