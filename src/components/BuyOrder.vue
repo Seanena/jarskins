@@ -1,69 +1,181 @@
-<template>
-  <div id="app">
-      <div class="table">
-          <div class="bottom-bar">
-              <a href="#" class="order-history">ประวัติการสั่งซื้อ</a>
-              <div class="separator"></div>
-              <a href="/src/headder/sell_order.html" class="sales-history">บันทึกการขาย</a>
-              <div class="search-box">
-                  <input class="search-input" type="text" placeholder="กรอกชื่อไอเทม" />
-                  <button class="serch-button">ค้นหา</button>
-              </div>
-          </div>
+<script setup>
+import { ref } from 'vue';
+import  { useProductStore } from '@/stores/products'
+import { computed, watchEffect } from 'vue'
+import { RouterLink } from 'vue-router';
 
-          <div class="custom-div">
-              <div class="column">
-                  <div class="info-item">
-                      <p class="info-label">ข้อมูลสินค้า</p>
-                  </div>
-                  <div class="info-item">
-                      <p class="info-label">ข้อมูลสกิล</p>
-                  </div>
-                  <div class="info-item">
-                      <p class="info-label">ราคาซื้อ</p>
-                  </div>
-                  <div class="info-item">
-                      <p class="info-label">วิธีการชำระเงิน</p>
-                  </div>
-                  <div class="info-item">
-                      <p class="info-label">ราคาซื้อ</p>
-                  </div>
-              </div>
-              <div class="row">
-                  <img src="../assets/pic/playerLeft.png" alt="" />
-                  <p>M4A4 | Eye of Horus (มีรอยถลอกเล็กน้อย) </p>
-                  <p class="red">฿ 47122.28</p>
-                  <h3>Promptpay</h3>
-                  <button>รอต่อรอบเทรด offer</button>
-              </div>
-          </div>
+const name = ref('');
+const address = ref('');
+const phoneNumber = ref('');
+const note = ref('')
+const paymentMethod = ref('');
+
+const storeProduct = useProductStore()
+
+
+function formatNumberWithCommas(number) {
+    const formattedNumber = Number(number).toFixed(2);
+    return formattedNumber.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");   
+}
+
+const totalOverallPrice = computed(() => {
+  return storeProduct.CartList.reduce((total, product) => total + product.totalProductPrice, 0)
+})
+
+watchEffect(() => {
+  for (const product of storeProduct.CartList) {
+    product.totalProductPrice = product.quatity * product.PriceCal
+  }
+})
+
+const removeFromCart = (productId) => {
+  storeProduct.removeFromCart(productId);
+};
+
+
+const placeOrder = () => {
+    const hasInvalidQuantity = storeProduct.CartList.some(product => product.quatity <= 0);
+
+    if (hasInvalidQuantity) {
+        alert("จำนวนสินค้าต้องมากกว่า 0");
+    } else {
+        const orderData = {
+            orderNumber: storeProduct.OrderList.length + 1,
+            CartList: storeProduct.CartList,
+            Total: storeProduct.totalOverallPrice,
+            name: name.value,
+            address: address.value,
+            phoneNumber: phoneNumber.value,
+            note: note.value,
+            payment: paymentMethod.value,
+        };
+        alert("สั่งซื้อสำเร็จ! ตรวจสอบรายละเอียดการสั่งซื้อได้ที่ รายการสั่งซื้อ \uD83D\uDE0E \uD83D\uDE0E \nขอบพระคุณอย่างยิ่ง");
+        storeProduct.addOrder(orderData);
+
+    }
+}
+
+</script>
+
+<template>
+    <div v-if="storeProduct.CartList.length === 0" class="incompletecart mb-3">
+      <div class="container-xl mt-3" style="background-color: #333; height: 40px; border-radius: 5px;">
+        <table style="background-color: #333; text-align: center vertical-align:middle;">
+          <thead class="top">
+            <a href="" style="color: red; margin-right: 20%;">cart</a>
+            <RouterLink to="/buyorder" >
+              <a href="">history</a>
+            </RouterLink>
+          </thead>
+        </table>
       </div>
-      <footer class="site-footer">
-          <div class="f1">
-              <h3>JARJOSUDLOR</h3>
-              <p>Powered by Steam. Not affiliated with Valve Corp.</p>
-              <p>
-                  &copy; 2023 JARJOSUDLOR |
-                  <a>นโยบายความเป็นส่วนตัว</a> |
-                  <a>ข้อกำหนดการให้บริการ</a> |
-                  <a>นโยบายคุกกี้</a>
-              </p>
-          </div>
-          <div class="f2">
-              <div class="f21">
-                  <h3>Introduction</h3>
-                  <p>Privacy Statement</p>
-                  <p>Terms of Service</p>
-                  <p>Cookie policy</p>
-              </div>
-              <div class="f22">
-                  <h3>Payment methods</h3>
-                  <p>prompt pay</p>
-                  <p>true money</p>
-              </div>
-          </div>
-      </footer>
-  </div>
+      <div class="outcon" style="width: 100%; margin: 0 auto;">
+            <div class="container-xl mt-2" style="background-color: #333; border-radius: 10px; height: 300px;">
+                <div class="bd-example table-container ">
+                <table class="table"  style="text-align: center; vertical-align: middle;">
+                    <thead class="thead-dark">
+                    <tr>
+                    <th scope="col" style="width:40%; background-color: #333; color: #d9d9d9;">ข้อมูลสินค้า</th>
+                    <th scope="col" style="width:10%; background-color: #333; color:#d9d9d9;">ราคา</th>
+                    <th scope="col" style="width:10%; background-color: #333;color:#d9d9d9;">วิธีชำระเงิน</th>
+                    <th scope="col" style="width:20%; background-color: #333;color:#d9d9d9;">สถานะ</th>
+                    </tr>
+                </thead>
+                <br>
+                <tbody style="color: #333;">
+                    <tr v-for="(productData, index) in storeProduct.CartList" :key="index">
+                    <td>
+                        <div class="product-grid">
+                        <div class="product-image">
+                        <img :src="productData.img" alt="" style="width: 70%;">
+                        </div>
+                        <div class="product-name">
+                        <span>{{ productData.Name }}</span>
+                        </div>
+                        </div>
+                    </td>
+                    <td>{{ productData.Price }}</td>
+                    <td>Promtpay</td>
+                    <td>
+                        <button class="btn btn-danger" @click="removeFromCart(productData.id)" style="width: 60%; background-color: red; color: white;">
+                            DELETE
+                        </button>
+                    </td>
+                    </tr>
+                    
+                </tbody>
+
+                </table>
+                </div>
+            </div>
+        </div>       
+    </div>
+
+
+    <div v-else class="completecart">
+      <div class="container-xl mt-3" style="background-color: #333; height: 40px; border-radius: 5px;">
+        <table style="background-color: #333; text-align: center vertical-align:middle;">
+          <thead class="top">
+            <a href="" style="color: red;">cart</a>
+            <RouterLink to="/historyorder">
+              <a href="">history</a>
+            </RouterLink>
+          </thead>
+        </table>
+      </div>
+        <div class="outcon" style="width: 100%; margin: 0 auto;">
+            <div class="container-xl mt-2" style="background-color: #333; border-radius: 10px;">
+                <div class="bd-example table-container ">
+                <table class="table"  style="text-align: center; vertical-align: middle;">
+                    <thead class="thead-dark">
+                    <tr>
+                    <th scope="col" style="width:40%; background-color: #333; color: #d9d9d9;">ข้อมูลสินค้า</th>
+                    <th scope="col" style="width:10%; background-color: #333; color:#d9d9d9;">ราคา</th>
+                    <th scope="col" style="width:10%; background-color: #333;color:#d9d9d9;">วิธีชำระเงิน</th>
+                    <th scope="col" style="width:20%; background-color: #333;color:#d9d9d9;">สถานะ</th>
+                    </tr>
+                </thead>
+                <br>
+                <tbody style="color: #333;">
+                    <tr v-for="(productData, index) in storeProduct.CartList" :key="index">
+                    <td>
+                        <div class="product-grid">
+                        <div class="product-image">
+                        <img :src="productData.img" alt="" style="width: 70%;">
+                        </div>
+                        <div class="product-name">
+                        <span>{{ productData.Name }}</span>
+                        </div>
+                        </div>
+                    </td>
+                    <td>{{ productData.Price }}</td>
+                    <td>Promtpay</td>
+                    <td>
+                        <button class="btn btn-danger" @click="removeFromCart(productData.id)" style="width: 60%; background-color: red; color: white;">
+                            DELETE
+                        </button>
+                    </td>
+                    </tr>
+                    
+                </tbody>
+
+                </table>
+                <div class="detailbill" style="color: white;">
+                    <p>รวม : {{ formatNumberWithCommas(totalOverallPrice) }} บาท</p>
+                    <hr>
+                    <form action="" @submit.prevent="placeOrder">
+
+                        <div class="panelbuttcon">
+                                <input type="submit" class="btn btn-success" style="margin: auto; margin-bottom: 1%;" value="ยืนยันการสั่งซื้อ" >
+                        </div>
+                    </form>
+                    
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </template>
 
 <style>
